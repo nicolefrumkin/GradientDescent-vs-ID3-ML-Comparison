@@ -155,8 +155,6 @@ def evaluate_model():
     accuracy = np.mean(predictions == y_test)
 
     print(f"\nID3 Test Accuracy: {accuracy * 100:.2f}%")
-    print("\nDecision Tree Structure:")
-    # tree.print_tree()
 
     # Visualize the tree
     dot = visualize_tree(tree, feature_names=data.feature_names)

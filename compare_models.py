@@ -34,6 +34,3 @@ print("\n--- COMPARISON RESULTS ---")
 print(f"Neural Network Accuracy: {nn_test_accuracy * 100:.2f}%")
 print(f"ID3 Decision Tree Accuracy: {tree_test_accuracy * 100:.2f}%")
 
-# Optional: print tree structure
-print("\nDecision Tree Structure:")
-tree.print_tree()
