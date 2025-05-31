@@ -6,6 +6,7 @@ import numpy as np
 from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
 from collections import Counter
+from graphviz import Digraph
 
 def entropy(y):
     counts = Counter(y)
@@ -101,6 +102,47 @@ class ID3DecisionTree:
             print(f"{indent}Feature {node.feature} > {node.threshold}")
             self.print_tree(node.right, depth + 1)
 
+
+def visualize_tree(tree: ID3DecisionTree, feature_names=None):
+    dot = Digraph()
+    node_id = 0
+
+    def add_nodes_edges(node, parent=None, edge_label=None):
+        nonlocal node_id
+        curr_id = str(node_id)
+        node_id += 1
+
+        if node.is_leaf():
+            label = f"{node.value}"
+        else:
+            feat_name = feature_names[node.feature] if feature_names is not None else f"X{node.feature}"
+            label = f"{feat_name} ≤ {node.threshold:.2f}"
+
+        dot.node(
+            curr_id,
+            label,
+            fontname="Arial",
+            fontsize="17",
+            style="rounded",
+            shape="box",
+        )
+
+        if parent is not None:
+            dot.edge(
+                parent,
+                curr_id,
+                label=edge_label,
+                fontname="Arial",
+                fontsize="16"
+            )
+
+        if not node.is_leaf():
+            add_nodes_edges(node.left, curr_id, "True")
+            add_nodes_edges(node.right, curr_id, "False")
+
+    add_nodes_edges(tree.root)
+    return dot
+
 # For comparison with the neural network
 def evaluate_model():
     data = load_breast_cancer()
@@ -114,7 +156,12 @@ def evaluate_model():
 
     print(f"\nID3 Test Accuracy: {accuracy * 100:.2f}%")
     print("\nDecision Tree Structure:")
-    tree.print_tree()
+    # tree.print_tree()
+
+    # Visualize the tree
+    dot = visualize_tree(tree, feature_names=data.feature_names)
+    dot.render("id3_tree", format="png", cleanup=True)
+    print("Decision tree saved as id3_tree.png")
 
 if __name__ == "__main__":
     evaluate_model()
