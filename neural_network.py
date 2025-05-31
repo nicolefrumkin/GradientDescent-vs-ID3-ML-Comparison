@@ -1,3 +1,7 @@
+# Full Name: Nitzan Monfred | ID: 316056126
+# Full Name: Nicole Frumkin | ID: 211615372
+# Full Name: Alona Gertskin | ID: 207787540
+
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
@@ -61,10 +65,10 @@ def train(X, y, learning_rate=0.1, epochs=1000, stopping_accuracy=None):
 # Main
 if __name__ == "__main__":
     # Generate synthetic binary classification dataset
-    X, y = make_classification(n_samples=1000*2, n_features=10, n_classes=2, random_state=1)
+    X, y = make_classification(n_samples=1000, n_features=10, n_classes=2, random_state=1)
     X = StandardScaler().fit_transform(X)
 
-    weights, bias, train_loss, test_loss, final_acc = train(X, y, learning_rate=0.1, epochs=500, stopping_accuracy=0.92)
+    weights, bias, train_loss, test_loss, final_acc = train(X, y, learning_rate=0.1, epochs=1000, stopping_accuracy=0.92)
 
     # Plotting
     plt.plot(train_loss, label='Train Loss')

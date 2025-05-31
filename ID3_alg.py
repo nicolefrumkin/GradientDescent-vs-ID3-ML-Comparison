@@ -1,5 +1,6 @@
-# Full Name: Yael Bruner | ID: 000000000
-# Full Name: Nicole Frumkin | ID: 000000000
+# Full Name: Nitzan Monfred | ID: 316056126
+# Full Name: Nicole Frumkin | ID: 211615372
+# Full Name: Alona Gertskin | ID: 207787540
 
 import numpy as np
 from sklearn.datasets import load_breast_cancer
