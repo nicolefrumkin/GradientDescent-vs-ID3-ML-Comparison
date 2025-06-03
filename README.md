@@ -43,11 +43,15 @@ We used the [Breast Cancer dataset](https://scikit-learn.org/stable/modules/gene
 
 ### 🧠 Neural Network Diagram
 
-![Neural Network Diagram](images/nn_visual.png)
+<p align="center">
+  <img src="images/nn_visual.png" alt="Neural Network Diagram" width="500"/>
+</p>
 
 ### 🌳 Decision Tree Structure
 
-![Decision Tree Graph](images/id3_tree.png)
+<p align="center">
+  <img src="images/id3_tree.png" alt="Decision Tree Graph" width="500"/>
+</p>
 
 ---
 
