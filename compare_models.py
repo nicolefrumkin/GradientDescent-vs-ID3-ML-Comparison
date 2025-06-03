@@ -6,8 +6,8 @@ import numpy as np
 from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from ID3_alg import ID3DecisionTree  # Assumes ID3_alg.py is in same folder
-from neural_network import train as nn_train, predict as nn_predict, sigmoid  # Assumes neural_network.py exists
+from ID3_alg import ID3DecisionTree  
+from neural_network import train as nn_train, predict as nn_predict, sigmoid  
 
 # 1. Load and preprocess the dataset
 data = load_breast_cancer()
