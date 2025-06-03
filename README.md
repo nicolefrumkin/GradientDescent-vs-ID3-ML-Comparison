@@ -64,7 +64,3 @@ We used the [Breast Cancer dataset](https://scikit-learn.org/stable/modules/gene
 * Nitzan Monfred
 * Nicole Frumkin
 * Alona Gertskin
-
----
-
-Let me know if you'd like help generating the images automatically or modifying any section.
